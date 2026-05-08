@@ -18,6 +18,7 @@ import com.selfcare.tracker.data.model.Fetish
 import com.selfcare.tracker.data.model.Medium
 import com.selfcare.tracker.ui.theme.LocalAppColors
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MediumSelector(
     media: List<Medium>,
@@ -50,6 +51,7 @@ fun MediumSelector(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FetishSelector(
     fetishes: List<Fetish>,

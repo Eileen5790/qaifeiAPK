@@ -162,6 +162,7 @@ fun StatsScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DateRangeSelector(
     selected: DateRange,
