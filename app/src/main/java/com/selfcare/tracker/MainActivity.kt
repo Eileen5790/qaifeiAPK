@@ -19,8 +19,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.selfcare.tracker.ui.LocalTranslations
-import com.selfcare.tracker.ui.I18n.zhTranslations
-import com.selfcare.tracker.ui.I18n.enTranslations
+import com.selfcare.tracker.ui.zhTranslations
+import com.selfcare.tracker.ui.enTranslations
 import com.selfcare.tracker.ui.screens.*
 import com.selfcare.tracker.ui.theme.SelfCareTheme
 import com.selfcare.tracker.ui.viewmodel.SettingsViewModel
@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-sealed class Screen(val route: String, val icon: ImageVector)
+data class Screen(val route: String, val icon: ImageVector)
 val screens = listOf(
     Screen("add", Icons.Default.Add),
     Screen("records", Icons.Default.List),

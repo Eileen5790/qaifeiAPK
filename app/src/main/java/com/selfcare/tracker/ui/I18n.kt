@@ -136,7 +136,9 @@ data class Translations(
     val selectMedium: String,
     val selectFetish: String,
     val noData: String,
-    val vsLastMonth: String
+    val vsLastMonth: String,
+    val countTrend: String,
+    val durationTrend: String
 )
 
 val zhTranslations = Translations(
@@ -271,7 +273,9 @@ val zhTranslations = Translations(
     selectMedium = "选择媒介",
     selectFetish = "选择性癖",
     noData = "暂无数据",
-    vsLastMonth = "对比上月"
+    vsLastMonth = "对比上月",
+    countTrend = "次数趋势",
+    durationTrend = "时长趋势"
 )
 
 val enTranslations = Translations(
@@ -406,7 +410,9 @@ val enTranslations = Translations(
     selectMedium = "Select Medium",
     selectFetish = "Select Fetish",
     noData = "No Data",
-    vsLastMonth = "vs Last Month"
+    vsLastMonth = "vs Last Month",
+    countTrend = "Count Trend",
+    durationTrend = "Duration Trend"
 )
 
 val LocalTranslations = compositionLocalOf { zhTranslations }

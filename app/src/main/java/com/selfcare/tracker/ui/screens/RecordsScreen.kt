@@ -57,7 +57,7 @@ fun RecordsScreen(
                 val sign = if (diff >= 0) "+" else ""
                 val minutes = kotlin.math.abs(diff) / 60
                 val seconds = kotlin.math.abs(diff) % 60
-                "$sign$minutes分${seconds}秒"
+                "$sign${minutes}分${seconds}秒"
             } else null
 
             RecordItem(

@@ -192,7 +192,7 @@ class StatsViewModel @Inject constructor(
                 "${cal.get(Calendar.MONTH) + 1}/${cal.get(Calendar.DAY_OF_MONTH)}"
             }
             .mapValues { it.value.sumOf { r -> r.duration } }
-            .entries
+            .entries.toList()
             .takeLast(7)
             .map { it.key to it.value }
 
