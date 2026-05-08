@@ -22,22 +22,23 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Install Gradle 8.5
+      run: |
+        wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip -O /tmp/gradle.zip
+        unzip -q /tmp/gradle.zip -d /opt
+        echo "/opt/gradle-8.5/bin" >> $GITHUB_PATH
+
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       with:
         api-level: 34
         build-tools: 34.0.0
-        ndk: 26.1.10909125
-        cmake: 3.22.1
 
     - name: Accept Android licenses
       run: yes | sdkmanager --licenses
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-
     - name: Build with Gradle
-      run: ./gradlew assembleRelease
+      run: gradle assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
