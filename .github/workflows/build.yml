@@ -37,16 +37,14 @@ jobs:
     - name: Accept Android licenses
       run: yes | sdkmanager --licenses
 
-    - name: Build with Gradle
-      run: gradle assembleRelease
+    - name: Build Debug APK
+      run: gradle assembleDebug
 
     - name: List build output directory
-      run: ls -la app/build/outputs/apk/release/
+      run: ls -la app/build/outputs/apk/debug/
 
-    - name: Upload APK
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
-        name: app-release
-        path: |
-          app/build/outputs/apk/release/*.apk
-          app/build/outputs/apk/release/*.aab
+        name: app-debug
+        path: app/build/outputs/apk/debug/*.apk
